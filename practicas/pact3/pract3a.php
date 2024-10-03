@@ -19,7 +19,6 @@ $idolos = [
     ["nombre" => "Scottie", "apellido" => " Pippen", "apodo" => "Pip",  "imagen" => "https://library.sportingnews.com/styles/twitter_card_120x120/s3/2021-08/scottie-pippen_1u94swz5iew0x1bicjbb5cuwia.jpeg?itok=Oj4Qk0-R"
     , "descripcion" => "Es el primer jugador en el que me fije en baloncesto, ya que no soy un buen atacante pero si un gran defensor, como Pippen, a pesar de tener un cuerpo 'delgado' pudo parar a gente mucho mas grande que el al igual que hago yo ahora"],
 
-
 ];
 
 
