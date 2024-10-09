@@ -3,7 +3,7 @@ $peliculas = [
   [
       "nombre" => "Inception",
       "imagen" => "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
-      "horario" => "21:00",
+      "horario" => ["21:30","23:00","00:00"],
       "sinopsis" => "Un ladrón que roba secretos del subconsciente es dado la oportunidad de borrar su pasado criminal.",
       "duracion" => "148 minutos",
       "director" => "Christopher Nolan",
@@ -222,10 +222,10 @@ $peliculas = [
               <img class="bd-placeholder-img card-img-top" width="100%" height="225" src='. $pelicula['imagen'].' alt="" >
               <div class="card-body">
                 <h1>'. $pelicula['nombre'].'</h1>
-                <p class="card-text">' . $pelicula['horario'].'</p>
+                <p class="card-text">' . $pelicula['horarios'].'</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver Trailer</button>
+                    <a href='.$pelicula['trailer'].'><button type="button" class="btn btn-sm btn-outline-secondary">Ver Trailer</button></a>
                     <a href="detalle.php?calificacion='.$pelicula['calificacion'].'&genero='.$pelicula['genero'].'&reparto='.$pelicula['reparto'].'&director='.$pelicula['director'].'&nombre='.$pelicula['nombre'].'&sinopsis=' . $pelicula['sinopsis'] .'&imagen='.$pelicula['imagen'].'&horario='.$pelicula['horario'].'&duracion='.$pelicula['duracion'].'"><button type="button" class="btn btn-sm btn-outline-secondary">Mas Informacion</button></a>
                   </div>
                   <small class="text-muted"></small>

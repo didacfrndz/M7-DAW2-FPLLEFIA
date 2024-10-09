@@ -68,6 +68,7 @@
 <body>
         <?php
             echo '
+            <a href="peliculas.php"><button>Inicio</button></a>
             <div class="grande">
         <h1 class="titulo"> ' . $_GET['nombre'] .' </h1>
         <div class="principal">
@@ -90,8 +91,27 @@
     </div>
             ';
 
-        ?>
 
+            
+        ?>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php foreach ( $_GET['imagen'] as $index => $imagen): ?>
+                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                    <img class="d-block w-100" src="<?= $imagen ?>" alt="Imagen extra <?= $index + 1 ?>">
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </a>
+    </div>
+</div>
     
 </body>
 </html>
