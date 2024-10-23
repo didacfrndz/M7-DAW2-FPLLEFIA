@@ -31,17 +31,11 @@ $casas_info = [
     ]
 ];
 
-//recoger valores de nombre y apellido(s)
 $nom = $_POST['nom'];
 $cognoms = $_POST['cognoms'];
-
-
 $casa_seleccionada = array_rand($casas_info);
 $info_casa = $casas_info[$casa_seleccionada];
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -52,8 +46,7 @@ $info_casa = $casas_info[$casa_seleccionada];
 </head>
 <body>
     <?php
-        echo "
-            <style>
+        echo "<style>
                 body {
                     background-color: " . $info_casa['background_color'] . ";
                     color: " . $info_casa['text_color'] . ";
@@ -63,8 +56,7 @@ $info_casa = $casas_info[$casa_seleccionada];
                     padding: 20px;
                     border-radius: 5px;
                 }
-            </style>
-        ";
+            </style>";
     ?>
     <div class="container text-center">
     <?php
@@ -74,9 +66,7 @@ $info_casa = $casas_info[$casa_seleccionada];
                 <p>" . $info_casa['welcome_message'] . "</p>
                 <p>Estimat/da " . $nom . " " . $cognoms . ", ens complau donar-te la benvinguda a " . $casa_seleccionada . "!</p>
                 <img src='" . $info_casa['image'] . "' alt='Escut de " . $casa_seleccionada . "' class='mt-4' style='width: 200px;'>
-            </div>
-            
-        ";
+            </div>";
     ?>   
     </div>
 </body>
