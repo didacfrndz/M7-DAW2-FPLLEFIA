@@ -71,3 +71,4 @@ El problema reside en que no estas concadenando bien porque te faltaba un = en t
 </form>
 
 Falta colocarle un `id` al input :D
+
