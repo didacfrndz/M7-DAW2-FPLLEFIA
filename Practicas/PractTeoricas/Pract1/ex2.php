@@ -19,9 +19,10 @@
         }
 
     }
+    
     $libro1 = new Libro(); 
-
     $libro2 = new Libro("Cien años de soledad", "Gabriel Garcia Marquez");
+    
     echo $libro1->descripcion();
     echo "<br>";
     echo $libro2->descripcion();
