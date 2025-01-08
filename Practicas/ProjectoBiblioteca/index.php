@@ -24,13 +24,13 @@ class Biblioteca{
 
     public array $arrayLibros;
 
-    public function __construct($arrayLibros)
+    public function __construct(array $arrayLibros = [])
     {
         $this->arrayLibros = $arrayLibros;
     }
 
     public function agregarLibro(){
-
+        array_push($this->arrayLibros);
     }
 
     public function mostrarLibro(){
@@ -43,3 +43,14 @@ class Biblioteca{
 
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
