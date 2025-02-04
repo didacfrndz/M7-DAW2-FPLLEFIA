@@ -1,58 +1,44 @@
 <?php
     class Baraja{
 
-        public array $baraja_cartas = [];
+        public array $conjunto_cartas = [];
 
-        public function crear_baraja(){
+        public function crear_baraja() { 
+            $this->conjunto_cartas = [];
             $colores = ['red', 'yellow', 'blue', 'green'];
-
-            foreach ($colores as $color){
-                for( $i=1 ; $i<=9 ; $i++){
-                    $this->baraja_cartas[] = new Carta($color, $i, count($this->baraja_cartas) + 1);
+            foreach ($colores as $color) {
+                for ($i = 0; $i <= 9; $i++) {
+                    $this->conjunto_cartas[] = new Carta($i, $color); 
                 }
 
-            $this->baraja_cartas[] = new Carta($color, 'reverse', uniqid());
-            $this->baraja_cartas[] = new Carta($color, 'skip', uniqid());
-            $this->baraja_cartas[] = new Carta($color, 'picker', uniqid());
-
-            }
-
+        }
+        $this->conjunto_cartas[] = new Carta('reverse', $color);
+        $this->conjunto_cartas[] = new Carta('skip', $color);
+        $this->conjunto_cartas[] = new Carta('picker', $color);
         }
 
         public function mezcla(){
-            shuffle($this->baraja_cartas);
+            shuffle($this->conjunto_cartas);
         }
 
-        public function pinta_baraja(){
-            $baraja= "";
-            foreach($this->baraja_cartas as $carta){
-                $baraja .=$carta->pinta_carta();
+        public function pinta_baraja() {
+            foreach ($this->conjunto_cartas as $carta) {
+                echo $carta->pintar_carta(); 
             }
-            return $baraja;
         }
 
-        public function pinta_baraja_girada(){
-            $baraja= "";
-            foreach($this->baraja_cartas as $carta){
-                $baraja .=$carta->pinta_carta_girada();
+        public function pinta_baraja_girada() {
+            foreach ($this->conjunto_cartas as $carta) {
+                echo $carta->pintar_carta(); 
             }
-            return $baraja;
         }
 
 
         public function getConjuntoCartas() {
-            return $this->baraja_cartas;
+            return $this->conjunto_cartas;
         }
 
     }
 
-    $baraja = new Baraja();
-
-    $baraja->crear_baraja();
-
-    $baraja->mezcla();
-
-    echo $baraja->pinta_baraja();
-
-    echo $baraja->pinta_baraja_girada();
+    
 ?>
