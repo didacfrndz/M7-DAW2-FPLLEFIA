@@ -22,8 +22,27 @@
 <?php
         include "componentes/header.php";
     ?>
-    <div class="container"><h1>Patrones Estructurales</h1>
-        
+    <div class="container">
+        <h1>Patrones Estructurales</h1>
+        <div>
+            <form action="" class="d-flex m-1">
+                <div class="card m-2" style="width: 8rem;">
+                        <div class="card-body">
+                            <a href="patrons/estructurales/adapter.php" class="btn btn-primary card-title">Adapter</a>
+                        </div>
+                </div>
+                <div class="card m-2" style="width: 8rem;">
+                        <div class="card-body">
+                            <a href="patrons/estructurales/bridge.php" class="btn btn-primary card-title">Bridge</a>
+                        </div>
+                </div>
+                <div class="card m-2" style="width: 8rem;">
+                        <div class="card-body">
+                            <a href="patrons/estructurales/decorator.php" class="btn btn-primary card-title">Decorator</a>
+                        </div>
+                </div>
+            </form>
+        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>

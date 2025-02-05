@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Patrones de Creacion</h5>
                     <p class="card-text">Texto descriptivo para la segunda card. Aquí puedes poner más detalles interesantes.</p>
-                    <a href="#" class="btn btn-primary">Ver más</a>
+                    <a href="creacion.php" class="btn btn-primary">Ver más</a>
                 </div>
             </div>
         </div>
