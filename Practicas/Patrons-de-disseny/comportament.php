@@ -1,5 +1,6 @@
 <?php
-
+    $informacion = "";
+    
 ?>
 
 <!DOCTYPE html>
@@ -25,26 +26,35 @@
     <div class="container">
         <h1>Patrones Estructurales</h1>
         <div>
-            <form action="" class="d-flex m-1">
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/comportamiento/iterator.php" class="btn btn-primary card-title">Iterator</a>
-                        </div>
-                </div>
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/comportamiento/observer.php" class="btn btn-primary card-title">Observer</a>
-                        </div>
-                </div>
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/comportamiento/strategy.php" class="btn btn-primary card-title">Stragety</a>
-                        </div>
-                </div>
+            <form method="GET">
+                <select name="select"  class="form-select" aria-label="Default select example">
+                    <option value="iterator">Iterator</option>
+                    <option value="observer">Observer</option>
+                    <option value="stragety">Stragety</option>
+                </select>
+                <input type="submit" value="Enviar">
             </form>
+        </div>
+        <div>
+            <?php
+                if($_SERVER["REQUEST_METHOD"] == "GET"){
+                    $valorSeleccion = $_GET['select'];
+                    if($valorSeleccion == 'iterator'){
+                        include "patrons/comportamiento/iterator.php";
+                    }else if($valorSeleccion == "observer"){
+                        include "patrons/comportamiento/observer.php";   
+                    }else if($valorSeleccion == "stragety"){
+                        include "patrons/comportamiento/strategy.php";
+                    }
+                }
+            ?>
         </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<?php
+
+?>
