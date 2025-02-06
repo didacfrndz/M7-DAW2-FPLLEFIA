@@ -1,44 +1,33 @@
 <?php
-    class Baraja{
+session_start();
+include_once "./carta.class.php";
 
-        public array $conjunto_cartas = [];
-
-        public function crear_baraja() { 
-            $this->conjunto_cartas = [];
-            $colores = ['red', 'yellow', 'blue', 'green'];
-            foreach ($colores as $color) {
-                for ($i = 0; $i <= 9; $i++) {
-                    $this->conjunto_cartas[] = new Carta($i, $color); 
-                }
-
-        }
-        $this->conjunto_cartas[] = new Carta('reverse', $color);
-        $this->conjunto_cartas[] = new Carta('skip', $color);
-        $this->conjunto_cartas[] = new Carta('picker', $color);
-        }
-
-        public function mezcla(){
-            shuffle($this->conjunto_cartas);
-        }
-
-        public function pinta_baraja() {
-            foreach ($this->conjunto_cartas as $carta) {
-                echo $carta->pintar_carta(); 
+class Baraja{
+    public $barajaCartas=[];
+    public function crearBaraja(){
+        $arrayColores=['blue', 'green', 'red', 'yellow']; 
+        $idCarta=0;
+        foreach ($arrayColores as $color) {
+            for ($i=0; $i < 10; $i++) { 
+                $this->barajaCartas[]=new Carta($color,$i,$idCarta);
             }
         }
-
-        public function pinta_baraja_girada() {
-            foreach ($this->conjunto_cartas as $carta) {
-                echo $carta->pintar_carta(); 
-            }
-        }
-
-
-        public function getConjuntoCartas() {
-            return $this->conjunto_cartas;
-        }
-
     }
 
-    
+    public function mezclarBaraja(){
+        shuffle($this->barajaCartas);
+    }
+
+    public function pintarBaraja(){
+        foreach($this->barajaCartas as $carta){
+            echo $carta->pinta_carta_link();
+            echo "<br>";
+        }
+    }
+
+    public function cartasJugador(){
+        
+    }
+}
+
 ?>
