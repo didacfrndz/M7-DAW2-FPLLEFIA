@@ -20,9 +20,7 @@
     </style>
 </head>
 <body>
-<?php
-        include "componentes/header.php";
-    ?>
+<!--Hacer header -->
     <div class="container">
         <h1>Patrones Estructurales</h1>
         <div>

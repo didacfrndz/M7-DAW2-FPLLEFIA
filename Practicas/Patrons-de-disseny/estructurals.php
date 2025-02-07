@@ -1,5 +1,5 @@
 <?php
-
+    $informacion = "";
 ?>
 
 <!DOCTYPE html>
@@ -19,29 +19,32 @@
     </style>
 </head>
 <body>
-<?php
-        include "componentes/header.php";
-    ?>
+<!--Hacer header -->
     <div class="container">
         <h1>Patrones Estructurales</h1>
         <div>
-            <form action="" class="d-flex m-1">
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/estructurales/adapter.php" class="btn btn-primary card-title">Adapter</a>
-                        </div>
-                </div>
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/estructurales/bridge.php" class="btn btn-primary card-title">Bridge</a>
-                        </div>
-                </div>
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/estructurales/decorator.php" class="btn btn-primary card-title">Decorator</a>
-                        </div>
-                </div>
+        <form method="GET">
+                <select name="select"  class="form-select" aria-label="Default select example">
+                    <option value="adapter">Adapter</option>
+                    <option value="bridge">Bridge</option>
+                    <option value="decorator">Decorator</option>
+                </select>
+                <input type="submit" value="Enviar">
             </form>
+        </div>
+        <div>
+            <?php
+                if($_SERVER["REQUEST_METHOD"] == "GET"){
+                    $valorSeleccion = $_GET['select'];
+                    if($valorSeleccion == 'adapter'){
+                        include "patrons/estructurales/adapter.php";
+                    }else if($valorSeleccion == "bridge"){
+                        include "patrons/estructurales/bridge.php";   
+                    }else if($valorSeleccion == "decorator"){
+                        include "patrons/estructurales/decorator.php";
+                    }
+                }
+            ?>
         </div>
     </div>
     

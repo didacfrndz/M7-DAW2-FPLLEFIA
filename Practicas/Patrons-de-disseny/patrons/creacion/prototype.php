@@ -18,11 +18,9 @@
     </style>
 </head>
 <body>
-    <?php
-    include "../../componentes/header.php";
-    ?>
+    
     <div class="container">
-        <h1>Poner el titulo</h1>
+        <h1>Prototype</h1>
 
         <h2>Puntos en contra</h2>
         <p>Parrafo explicando</p>

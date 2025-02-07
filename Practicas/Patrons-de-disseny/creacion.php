@@ -1,5 +1,5 @@
 <?php
-
+    $informacion = "";
 ?>
 
 <!DOCTYPE html>
@@ -19,32 +19,32 @@
     </style>
 </head>
 <body>
-<?php
-        include "componentes/header.php";
-    ?>
+<!--Hacer header -->
     <div class="container">
         <h1>Patrones de Creacion</h1>
-        <div>
-            <form action="" class="d-flex m-1">
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/creacion/factory.php" class="btn btn-primary card-title">Factory</a>
-                        </div>
-                </div>
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/creacion/prototype.php" class="btn btn-primary card-title">Prototype</a>
-                        </div>
-                </div>
-                <div class="card m-2" style="width: 8rem;">
-                        <div class="card-body">
-                            <a href="patrons/creacion/singleton.php" class="btn btn-primary card-title">Singleton</a>
-                        </div>
-                </div>
-            </form>
-        </div>
+        <form method="GET">
+            <select name="select"  class="form-select" aria-label="Default select example">
+                <option value="factory">Factory</option>
+                <option value="prototype">Prototype</option>
+                <option value="singleton">Singleton</option>
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
     </div>
-    
+    <div>
+        <?php
+            if($_SERVER['REQUEST_METHOD']=="GET"){
+                $valorSeleccion = $_GET['select'];
+                if($valorSeleccion == 'factory'){
+                    include "patrons/creacion/factory.php";
+                }else if($valorSeleccion == 'prototype'){
+                    include "patrons/creacion/prototype.php";
+                }else if($valorSeleccion == 'singleton'){
+                    include "patrons/creacion/singleton.php";
+                }
+            }
+        ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
