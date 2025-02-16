@@ -1,31 +1,29 @@
 <?php
-session_start();
+
 class Carta{
 
-    public string $palo;
-    public int $numero;
-    public string $index;
+    public $numero;
+    public $color;
+    public $index;
 
-    public function __construct(string $palo, int $numero, string $index)
-    {
-        $this->palo = $palo;
-        $this->numero = $numero; 
+    public function __construct($numero, $color,$index = null) {
+        $this->numero = $numero;
+        $this->color = $color;
         $this->index = $index;
     }
 
-    public function pinta_carta(){
-        $ruta = "cartas_uno/{$this->numero}_{$this->palo}.png";
-        return "<img src='{$ruta}' alt='{$this->palo} {$this->numero}' />";
+    public function pintar_carta() {
+        $ruta = $this->numero . '_' . strtolower($this->color) . '.png';
+        return '<img src="cartas_uno/' . $ruta . '" alt="Carta">';
     }
 
-    public function pinta_carta_link(){
-        $ruta = "cartas_uno/{$this->numero}_{$this->palo}.png";
-        return "<a href=''><img src='{$ruta}' alt='{$this->palo} {$this->numero}'/></a>";
+    public function pintar_carta_link() {
+        $ruta = $this->numero . '_' . strtolower($this->color) . '.png';
+        return '<a href="?carta=' . $this->index . '"><img src="cartas_uno/cartas_uno/' . $ruta . '" alt="Carta"></a>';
     }
 
-    public function pinta_carta_girada(){
-        $imagen = "cartas_uno/carta_girada.png";
-        return "<img src='{$imagen}' alt='Carta Girada'/>";
+    public function pinta_carta_girada() {
+        return '<img src="cartas_uno/cartas_uno/carta_girada.png" alt="Carta girada">';
     }
     
     

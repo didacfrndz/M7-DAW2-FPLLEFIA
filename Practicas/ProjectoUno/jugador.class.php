@@ -1,31 +1,22 @@
 <?php
-session_start();
+include 'carta.class.php';
 
-include "./baraja.class.php";
-
-class Jugador{
+class Jugador {
     public $mano = [];
-    public int $id;
+    public $id;
 
-    public function anyadir_carta($carta){
+    public function afegir_carta($carta) {
         $this->mano[] = $carta;
     }
 
-    public function mostrar_mano(){
-        for ($i = 0; $i <count($this->mano); $i++){
-            echo $this->mano[$i]->pinta_carta_link();
-            echo "<br>";
-        }
+    public function eliminar_carta($carta) {
+        array_shift($carta); //
     }
 
-    public function cartasRepartidas(){
-        $cartas_a_repartir = $_SESSION['cartasPorJugador'];
-        $partida = unserialize($_SESSION['partida']);
-        for ($i = 0; $i < $cartas_a_repartir; $i++) {
-            $carta = array_shift($partida->baraja->barajaCartas);
-            $this->anyadir_carta($carta);
+    public function mostrar_ma() {
+        foreach ($this->mano as $carta) {
+            $carta->pinta_carta();
         }
-        $_SESSION['partida'] = serialize($partida);
     }
 }
 ?>

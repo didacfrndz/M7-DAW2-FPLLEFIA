@@ -1,16 +1,18 @@
 <?php
-session_start();
+
 include_once "./carta.class.php";
 
 class Baraja{
     public $barajaCartas=[];
-    public function crearBaraja(){
-        $arrayColores=['blue', 'green', 'red', 'yellow']; 
-        $idCarta=0;
-        foreach ($arrayColores as $color) {
-            for ($i=0; $i < 10; $i++) { 
-                $this->barajaCartas[]=new Carta($color,$i,$idCarta);
+
+    public function crear_baraja() { 
+        foreach (['red', 'yellow', 'blue', 'green'] as $color) {
+            for ($i = 0; $i <= 9; $i++) {
+                $this->barajaCartas[] = new Carta($i, $color); 
             }
+            $this->barajaCartas[] = new Carta('reverse', $color);
+            $this->barajaCartas[] = new Carta('skip', $color);
+            $this->barajaCartas[] = new Carta('picker', $color);
         }
     }
 
@@ -20,14 +22,17 @@ class Baraja{
 
     public function pintarBaraja(){
         foreach($this->barajaCartas as $carta){
-            echo $carta->pinta_carta_link();
+            echo $carta->pintar_carta();
             echo "<br>";
         }
     }
-
-    public function cartasJugador(){
-        
+    public function pinta_baraja_girada() {
+        foreach ($this->barajaCartas as $carta) {
+            echo $carta->pinta_carta_girada();  
+        }
     }
+
+    
 }
 
 ?>

@@ -1,35 +1,44 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Formulario</title>
+    <style>
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; 
+        }
+    </style>
 </head>
-<body>
-<div class="container mt-5">
-        <h1 class="text-center text-white mb-4">Formulario de Jugadores</h1>
-        <form method="POST" action="#">
-            <div class="mb-3">
-                <label for="numJugadores" class="form-label text-white">Número de Jugadores</label>
-                <input type="number" class="form-control" id="numeroJugadores" name="numeroJugadores" placeholder="Introduce el número de jugadores" min="1" required>
-            </div>
+<body class="d-flex justify-content-center align-items-center vh-100">
 
-            <div class="mb-3">
-                <label for="numCartas" class="form-label text-white">Número de Cartas por Jugador</label>
-                <input type="number" class="form-control" id="cartasPorJugador" name="cartasPorJugador" placeholder="Introduce el número de cartas por jugador" min="1" required>
-            </div>
+    <!-- Video de fondo -->
+    <video autoplay muted loop class="video-background">
+        <source src="cartas_uno/cartas_uno/video_fondo_uno.mp4" type="video/mp4">
+    </video>
 
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="card p-4 bg-dark text-white" style="width: 22rem;">
+        <h2 class="card-title text-center">Bienvenido al juego del Uno!</h2>
+
+        <form action="index.php" method="POST">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" required>
             </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Numero de Cartas</label>
+                <input type="number" name="apellidos" id="apellidos" class="form-control" required>
+            </div>
+    
+            <button type="submit" class="btn btn-primary w-100">Comenzar Juego</button>
         </form>
     </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
